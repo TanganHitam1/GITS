@@ -1,20 +1,17 @@
 import 'dart:io';
 
 String sloanes(angka){
-  String hasil = "";
+  List<String> hasil = [];
   for (int i = 0; i < angka; i++) {
-    double number = i*(i+1)/2+1;
-    int intNum = number.toInt();
-    hasil += intNum.toString();
-    if (i < angka-1) {
-      hasil += "-";
-    }
+    int number = i * (i + 1) ~/ 2 + 1;
+    hasil.add(number.toString());
   }
-  return hasil;
+  return hasil.join("-");
 }
 
 void main() {
   print('Input angka: ');
   int? angka = int.parse(stdin.readLineSync()!);
+  print("Output: ");
   print(sloanes(angka));
 }
